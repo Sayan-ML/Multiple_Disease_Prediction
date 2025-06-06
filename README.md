@@ -84,16 +84,6 @@ Edit
 
 # Run the Streamlit app
 streamlit run app.py
-📷 Screenshots
-You can include screenshots like:
-
-🔘 Home screen with disease selection
-
-🧾 Input forms for clinical diseases
-
-🖼️ Image upload for Pneumonia / Retinopathy
-
-✅ Prediction output with interpretation
 
 📊 Model Performance (Optional)
 Disease	Model	Accuracy
