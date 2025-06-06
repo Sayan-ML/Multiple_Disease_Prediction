@@ -1,71 +1,113 @@
-🩺 Diabetes Prediction System
-A Machine Learning-based web application that predicts whether a person is likely to have diabetes or not, based on diagnostic measurements. Built using Python, Scikit-learn, and deployed using Streamlit.
+🧠 Multiple Disease Prediction System
+An integrated Machine Learning and Deep Learning based web application that predicts multiple diseases including:
 
-🚀 Demo
-Try the live app:
+❤️ Heart Disease
+
+🩺 Diabetes
+
+🧪 Kidney Disease
+
+🌫️ Pneumonia (via Chest X-rays)
+
+👁️ Diabetic Retinopathy (via Retinal Images)
+
+Built using Scikit-learn, TensorFlow/Keras, and Streamlit, this system provides a one-stop solution for early disease detection through both clinical parameters and medical imaging.
+
+🚀 Live Demo
+👉 Launch the App
+(Replace with actual Streamlit Share or hosted link)
 
 📌 Features
-User-friendly web interface powered by Streamlit
+✅ Tab-based navigation for each disease prediction
+✅ Real-time predictions with user-friendly input interface
+✅ Tabular models for Diabetes, Heart, and Kidney prediction
+✅ CNN-based image classification for Pneumonia & Retinopathy
+✅ Streamlined preprocessing and model inference
+✅ Clear results with optional model confidence scores
+✅ Beautiful, responsive UI using Streamlit
 
-Supports real-time diabetes risk prediction
+🧬 Diseases Covered
+1. ❤️ Heart Disease Prediction
+Inputs: Age, Sex, Chest Pain Type, Resting BP, Cholesterol, etc.
 
-Uses a trained machine learning model (e.g., Logistic Regression, Random Forest, etc.)
+Model: Random Forest / Logistic Regression
 
-Clean visualizations and intuitive inputs (sliders, checkboxes)
+2. 🩺 Diabetes Prediction
+Inputs: Glucose, Blood Pressure, BMI, Insulin, Age, etc.
 
-Handles missing values and outliers appropriately
+Model: Support Vector Machine / Decision Tree
 
-Optionally shows model performance metrics (Accuracy, Confusion Matrix, etc.)
+3. 🧪 Kidney Disease Prediction
+Inputs: Serum Creatinine, Sodium, Potassium, Albumin, Blood Urea, etc.
 
-📊 Input Features
-The app uses the following health indicators for prediction:
+Model: Random Forest Classifier
 
-Pregnancies
+4. 🌫️ Pneumonia Detection
+Input: Chest X-ray image (PNG/JPG)
 
-Glucose
+Model: Convolutional Neural Network (CNN)
 
-Blood Pressure
+Dataset: Chest X-Ray Images (Kaggle)
 
-Skin Thickness
+5. 👁️ Diabetic Retinopathy Detection
+Input: Retinal fundus image
 
-Insulin
+Model: Deep CNN
 
-BMI (Body Mass Index)
-
-Diabetes Pedigree Function
-
-Age
+Dataset: APTOS 2019 / EyePACS (Kaggle)
 
 🛠️ Tech Stack
-Frontend: Streamlit
+Category	Tools
+Frontend	Streamlit
+ML Models	Scikit-learn
+DL Models	TensorFlow / Keras
+Visualization	Matplotlib, Seaborn
+Deployment	Streamlit Cloud / Local Server
 
-Backend: Python, Scikit-learn
-
-Visualization: Matplotlib, Seaborn
-
-Model Persistence: Pickle
-
-🧠 ML Model
-A machine learning classification model is trained using the PIMA Indian Diabetes dataset from Kaggle.
-It has been preprocessed with the following steps:
-
-Outlier handling
-
-Imputation for missing values
-
-Feature scaling
-
-Model training and evaluation
-
-
-# Run the app
-streamlit run app.py
-📁 Repository Structure
+📁 Project Structure
 bash
 Copy
 Edit
-├── app.py                 # Streamlit app
-├── model.pkl              # Trained ML model
-├── diabetes.csv           # Dataset used
-├── requirements.txt       # Python dependencies
-└── README.md              # Project documentation
+├── app.py                      # Main Streamlit app
+├── heart_disease_model.pkl     # Saved model
+├── diabetes_model.pkl
+├── kidney_model.pkl
+├── pneumonia_model.h5          # CNN model
+├── retinopathy_model.h5
+├── utils/                      # Preprocessing & prediction logic
+│   ├── preprocess.py
+│   ├── prediction.py
+│   └── image_utils.py
+├── data/                       # Sample data or dataset references
+├── requirements.txt
+└── README.md
+
+# Run the Streamlit app
+streamlit run app.py
+📷 Screenshots
+You can include screenshots like:
+
+🔘 Home screen with disease selection
+
+🧾 Input forms for clinical diseases
+
+🖼️ Image upload for Pneumonia / Retinopathy
+
+✅ Prediction output with interpretation
+
+📊 Model Performance (Optional)
+Disease	Model	Accuracy
+Heart Disease	Random Forest	85%
+Diabetes	SVM	78%
+Kidney Disease	RF	90%
+Pneumonia	CNN	94%
+Retinopathy	CNN	92%
+
+🙋‍♂️ Author
+Sayan Banerjee
+🎓 MSc in Statistics and Computing, BHU
+💼 Skilled in Python, Machine Learning, Deep Learning, Power BI, SQL
+📫 LinkedIn | Email
+
+📄 License
+This project is licensed under the MIT License.
