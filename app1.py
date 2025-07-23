@@ -13,6 +13,32 @@ from tensorflow.keras.preprocessing import image
 from PIL import Image
 import numpy as np
 
+# Custom metrics needed to load segmentation model
+from tensorflow.keras import backend as K
+from tensorflow.keras.saving import register_keras_serializable
+
+@register_keras_serializable()
+def dice_coef(y_true, y_pred, smooth=1):
+    y_true_f = K.flatten(y_true)
+    y_pred_f = K.flatten(y_pred)
+    intersection = K.sum(y_true_f * y_pred_f)
+    return (2. * intersection + smooth) / (K.sum(y_true_f) + K.sum(y_pred_f) + smooth)
+
+@register_keras_serializable()
+def dice_loss(y_true, y_pred):
+    return 1 - dice_coef(y_true, y_pred)
+
+@register_keras_serializable()
+def iou_coef(y_true, y_pred, smooth=1):
+    y_true_f = K.flatten(y_true)
+    y_pred_f = K.flatten(y_pred)
+    intersection = K.sum(y_true_f * y_pred_f)
+    union = K.sum(y_true_f) + K.sum(y_pred_f) - intersection
+    return (intersection + smooth) / (union + smooth)
+
+
+
+
 # Set page config
 st.set_page_config(page_title="Multiple Disease Prediction", layout="wide", page_icon="👨‍🦰")
 
@@ -27,7 +53,8 @@ selected = st.sidebar.radio("Select Prediction Type", [
     'Heart Disease Prediction',
     'Kidney Disease Prediction',
     'Brain Tumor Detection using MRI Images',
-    'Eye Disease Prediction using OCT Images'
+    'Eye Disease Prediction using OCT Images',
+    'MRI Brain Tumor Segmentation'
 ])
 
 # Diabetes Prediction
@@ -363,3 +390,88 @@ if selected == 'Eye Disease Prediction using OCT Images':
             st.subheader("Class Probabilities:")
             for idx, score in enumerate(predictions):
                 st.write(f"{class_labels[idx]}: {score:.4f}")
+
+if selected == 'MRI Brain Tumor Segmentation':
+    st.title('Brain Tumor Segmentation using MRI Images')
+    st.image('https://production-media.paperswithcode.com/thumbnails/task/1acce291-f809-41b2-b665-8ce57b31efb8.jpg',width=500)
+    app_mode = st.sidebar.selectbox("Select Page",["Home","Tumor Segmentation"])
+
+    #Main Page
+    if(app_mode=="Home"):
+        # image_path = "home_page.jpeg"
+        # st.image(image_path,use_column_width=True)
+        st.markdown("""
+        This project focuses on the automated segmentation of brain tumors from MRI scans using a deep learning-based U-Net architecture. Tumor segmentation is a critical step in the diagnosis and treatment planning of brain cancers, and this tool offers a fast, accurate, and non-invasive solution to assist radiologists and clinicians.
+
+🔍 Objective
+The primary goal is to identify and segment brain tumor regions from input MRI images to aid in clinical decision-making. The model distinguishes tumor pixels from healthy tissue and produces a binary mask that outlines the tumor boundaries.
+
+🧪 Model Details
+Architecture: U-Net (Convolutional Neural Network)
+
+Input Size: 256 × 256 × 3 RGB MRI slices
+
+Loss Function: Dice Loss (to handle class imbalance)
+
+Metrics: Dice Coefficient and IoU (Intersection over Union)
+
+Framework: TensorFlow / Keras
+
+📊 Dataset
+The model was trained on publicly available brain MRI datasets containing annotated tumor masks. Preprocessing included normalization, resizing, and augmentation to improve generalization.
+
+⚙️ Features
+Upload any T1-weighted brain MRI image.
+
+View predicted tumor mask.
+
+Visual overlay of mask on original MRI image for better interpretability.
+
+""")
+
+
+    elif app_mode == "Tumor Segmentation":
+        st.subheader("🧠 Brain Tumor Segmentation (U-Net)")
+    
+        from tensorflow.keras.models import load_model
+        import tensorflow.keras.backend as K
+        from PIL import Image
+        import numpy as np
+    
+        # Define custom metrics BEFORE loading the model
+        # Load model with custom_objects
+        @st.cache_resource
+        def load_segmentation_model():
+            return load_model(r'C:\Users\sayan\OneDrive\Desktop\Multiple disease prediction\segment.keras', custom_objects={
+                "dice_coef": dice_coef,
+                "iou_coef": iou_coef,
+                "dice_loss": dice_loss
+            })
+    
+        seg_model = load_segmentation_model()
+    
+        uploaded_file = st.file_uploader("Upload an MRI image (PNG/JPG)", type=["png", "jpg", "jpeg"])
+    
+        if uploaded_file is not None:
+            image = Image.open(uploaded_file).convert("RGB")
+            st.image(image, caption="Original MRI Image", use_container_width=True)
+    
+            # Preprocess image to 256x256x3
+            image_resized = image.resize((256, 256))
+            img_array = np.array(image_resized) / 255.0
+            img_input = np.expand_dims(img_array, axis=0)
+    
+            # Predict mask
+            prediction = seg_model.predict(img_input)[0, :, :, 0]
+            mask = (prediction > 0.5).astype(np.uint8)
+    
+            st.subheader("Predicted Tumor Mask")
+            st.image(mask * 255, caption="Predicted Mask", clamp=True, width=256)
+    
+            # Overlay mask on original
+            overlay = np.array(image_resized).astype(np.float32) / 255.0
+            overlay[:, :, 1] += mask * 0.5  # green highlight
+            overlay = np.clip(overlay, 0, 1)
+    
+            st.subheader("Overlay on MRI")
+            st.image(overlay, caption="Overlay on MRI", width=256)
