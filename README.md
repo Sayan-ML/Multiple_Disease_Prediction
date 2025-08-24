@@ -156,14 +156,14 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 
 ---
 
-## 👨‍💻 Developed By  
+## 👨‍💻 Developed By Sayan Banerjee
 
 <p align="left">
-  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank">
+  <a href="https://www.linkedin.com/in/sayan-banerjee-0222a4214/" target="_blank">
     <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30" alt="LinkedIn Logo"/>
   </a>
   &nbsp;&nbsp;
-  <a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank">
+  <a href="https://github.com/Sayan-ML" target="_blank">
     <img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" width="30" alt="GitHub Logo"/>
   </a>
 </p>
