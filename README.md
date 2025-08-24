@@ -116,3 +116,54 @@ With real-time predictions, clear result visualization, and multi-disease suppor
 
 ├── requirements.txt
 └── README.md
+
+---
+
+## 🌟 Future Improvements  
+
+- 🔹 Add more diseases (e.g., **Parkinson’s, Liver Disease, Alzheimer’s**)  
+- 🔹 Integrate **Wearable IoT device data** (Fitbit, Apple Watch)  
+- 🔹 Add **Explainable AI (XAI)** for transparent predictions  
+- 🔹 Deploy with **Docker + Kubernetes** for production scalability  
+- 🔹 Add **mobile app support** (Flutter/React Native)  
+
+---
+
+## 🤝 Contributing  
+
+We welcome contributions from the community! 🎉  
+
+1. **Fork** the repository  
+2. **Create a new branch** (`feature-xyz`)  
+3. **Make your changes**  
+4. **Commit and push** your branch  
+5. **Open a Pull Request** 🚀  
+
+💡 You can also open issues for **bug reports, feature requests, or documentation improvements**.  
+
+---
+
+## 💖 Show Your Support  
+
+If you find this project useful, please **give it a ⭐ on GitHub** to help others discover it!  
+
+---
+
+## 📜 License  
+
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.  
+
+---
+
+## 👨‍💻 Developed By  
+
+<p align="left">
+  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30" alt="LinkedIn Logo"/>
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank">
+    <img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" width="30" alt="GitHub Logo"/>
+  </a>
+</p>
+
