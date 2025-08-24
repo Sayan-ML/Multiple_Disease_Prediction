@@ -1,79 +1,112 @@
-🧠 Multiple Disease Prediction System
-An integrated Machine Learning and Deep Learning based web application that predicts multiple diseases including:
+# 🧠 Multiple Disease Prediction System
 
-❤️ Heart Disease
+An integrated **Machine Learning** and **Deep Learning** based web application that predicts multiple diseases, including:  
 
-🩺 Diabetes
+- ❤️ **Heart Disease**  
+- 🩺 **Diabetes**  
+- 🧪 **Kidney Disease**  
+- 🌫️ **Pneumonia (via Chest X-rays)**  
+- 👁️ **Diabetic Retinopathy (via Retinal Images)**  
 
-🧪 Kidney Disease
+Built using **Scikit-learn**, **TensorFlow/Keras**, and **Streamlit**, this system provides a **one-stop solution** for early disease detection through both **clinical parameters** and **medical imaging**.
 
-🌫️ Pneumonia (via Chest X-rays)
+---
+# 🧠 Multiple Disease Prediction System  
 
-👁️ Diabetic Retinopathy (via Retinal Images)
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white)  
+![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white)  
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-orange?logo=scikit-learn&logoColor=white)  
+![TensorFlow](https://img.shields.io/badge/TensorFlow-Deep%20Learning-FF6F00?logo=tensorflow&logoColor=white)  
+![Keras](https://img.shields.io/badge/Keras-DL-red?logo=keras&logoColor=white)  
+![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen)  
+![License](https://img.shields.io/badge/License-MIT-yellow)  
 
-Built using Scikit-learn, TensorFlow/Keras, and Streamlit, this system provides a one-stop solution for early disease detection through both clinical parameters and medical imaging.
+---
 
-🚀 Live Demo
-👉 Launch the App
-(Replace with actual Streamlit Share or hosted link)
+## 📖 Project Overview  
 
-📌 Features
-✅ Tab-based navigation for each disease prediction
-✅ Real-time predictions with user-friendly input interface
-✅ Tabular models for Diabetes, Heart, and Kidney prediction
-✅ CNN-based image classification for Pneumonia & Retinopathy
-✅ Streamlined preprocessing and model inference
-✅ Clear results with optional model confidence scores
-✅ Beautiful, responsive UI using Streamlit
+The **Multiple Disease Prediction System** is an integrated **Machine Learning (ML) and Deep Learning (DL)** powered **web application** designed to predict multiple diseases from **clinical parameters and medical imaging**.  
 
-🧬 Diseases Covered
-1. ❤️ Heart Disease Prediction
-Inputs: Age, Sex, Chest Pain Type, Resting BP, Cholesterol, etc.
+This platform acts as a **one-stop solution for early disease detection**, helping healthcare professionals, researchers, and patients make **data-driven decisions**. By combining structured medical data (blood tests, vitals, clinical parameters) with unstructured medical imaging (X-rays, retinal scans), the system achieves both **breadth and depth** in diagnosis.  
 
-Model: Random Forest / Logistic Regression
+The application is implemented using **Scikit-learn, TensorFlow/Keras, and Streamlit**, ensuring an intuitive, interactive, and user-friendly interface for both technical and non-technical users.  
 
-2. 🩺 Diabetes Prediction
-Inputs: Glucose, Blood Pressure, BMI, Insulin, Age, etc.
+With real-time predictions, clear result visualization, and multi-disease support, this tool aims to bridge the gap between **clinical diagnostics and AI-driven healthcare innovations**.  
 
-Model: Support Vector Machine / Decision Tree
+---
 
-3. 🧪 Kidney Disease Prediction
-Inputs: Serum Creatinine, Sodium, Potassium, Albumin, Blood Urea, etc.
+## 🚀 Live Demo  
+👉 [Launch the App](#) *(Replace with actual Streamlit/hosted link)*  
 
-Model: Random Forest Classifier
+📽️ [App Walkthrough Demo](https://drive.google.com/file/d/1AdHwqrB8fRaRpxSjY3AOvnAwjWiRIX--/view?usp=sharing)  
 
-4. 🌫️ Pneumonia Detection
-Input: Chest X-ray image (PNG/JPG)
+---
 
-Model: Convolutional Neural Network (CNN)
+## ✨ Features  
 
-Dataset: Chest X-Ray Images (Kaggle)
+- ✅ **Multi-disease support** (Heart, Diabetes, Kidney, Pneumonia, Retinopathy)  
+- ✅ **Tab-based navigation** for a smooth user experience  
+- ✅ **Interactive forms** for entering medical parameters  
+- ✅ **CNN-based medical image classification** for Pneumonia & Retinopathy  
+- ✅ **Fast & optimized predictions** using pre-trained models  
+- ✅ **Optional confidence scores** for transparency in predictions  
+- ✅ **Responsive UI** built with **Streamlit**  
+- ✅ **Scalable architecture** – easily extendable to new diseases  
 
-5. 👁️ Diabetic Retinopathy Detection
-Input: Retinal fundus image
+---
 
-Model: Deep CNN
+## 🧬 Diseases Covered  
 
-Dataset: APTOS 2019 / EyePACS (Kaggle)
+### ❤️ Heart Disease Prediction  
+- **Inputs:** Age, Sex, Chest Pain Type, Resting BP, Cholesterol, Fasting Blood Sugar, etc.  
+- **Model:** Random Forest / Logistic Regression  
+- **Goal:** Early detection of cardiovascular disease risk.  
 
-🛠️ Tech Stack
-Category	Tools
-Frontend	Streamlit
-ML Models	Scikit-learn
-DL Models	TensorFlow / Keras
-Visualization	Matplotlib, Seaborn
-Deployment	Streamlit Cloud / Local Server
+### 🩺 Diabetes Prediction  
+- **Inputs:** Glucose, Blood Pressure, BMI, Insulin, Age, Skin Thickness, etc.  
+- **Model:** Support Vector Machine / Decision Tree  
+- **Goal:** Detect likelihood of Type 2 Diabetes for early lifestyle/medical interventions.  
 
-📁 Project Structure
-bash
-Copy
-Edit
+### 🧪 Kidney Disease Prediction  
+- **Inputs:** Serum Creatinine, Sodium, Potassium, Albumin, Blood Urea, etc.  
+- **Model:** Random Forest Classifier  
+- **Goal:** Identify potential Chronic Kidney Disease (CKD) cases.  
+
+### 🌫️ Pneumonia Detection (via Chest X-rays)  
+- **Input:** Chest X-ray image (PNG/JPG)  
+- **Model:** Deep **Convolutional Neural Network (CNN)**  
+- **Dataset:** Kaggle Chest X-Ray dataset  
+- **Goal:** Detect lung infections and classify images as **Pneumonia / Normal**.  
+
+### 👁️ Diabetic Retinopathy Detection (via Retinal Images)  
+- **Input:** Retinal Fundus Image  
+- **Model:** Deep CNN  
+- **Dataset:** APTOS 2019 / EyePACS (Kaggle)  
+- **Goal:** Detect retinal damage due to prolonged diabetes.  
+
+---
+
+## 🛠️ Tech Stack  
+
+| Category       | Tools/Frameworks |
+|----------------|------------------|
+| **Frontend**   | Streamlit |
+| **ML Models**  | Scikit-learn |
+| **DL Models**  | TensorFlow, Keras |
+| **Visualization** | Matplotlib, Seaborn |
+| **Deployment** | Streamlit Cloud / Local Server |
+
+---
+
+## 📁 Project Structure  
+
+```bash
 ├── app.py                      # Main Streamlit app
-├── heart_disease_model.pkl     # Saved model
+├── heart_disease_model.pkl     # Saved ML model
 ├── diabetes_model.pkl
 ├── kidney_model.pkl
-├── pneumonia_model.h5          # CNN model
-├── retinopathy_model.h5
+├── pneumonia_model.h5          # CNN model for Pneumonia
+├── retinopathy_model.h5        # CNN model for Retinopathy
 ├── utils/                      # Preprocessing & prediction logic
 │   ├── preprocess.py
 │   ├── prediction.py
@@ -82,24 +115,5 @@ Edit
 ├── requirements.txt
 └── README.md
 
-# Run the Streamlit app
-streamlit run app.py
-
-📊 Model Performance (Optional)
-Disease	Model	Accuracy
-Heart Disease	Random Forest	85%
-Diabetes	SVM	78%
-Kidney Disease	RF	90%
-Pneumonia	CNN	94%
-Retinopathy	CNN	92%
-
-🙋‍♂️ Author
-Sayan Banerjee
-🎓 MSc in Statistics and Computing, BHU
-💼 Skilled in Python, Machine Learning, Deep Learning, Power BI, SQL
-📫 LinkedIn | Email
-
-📄 License
-This project is licensed under the MIT License.
-
-App Demo :- https://drive.google.com/file/d/1AdHwqrB8fRaRpxSjY3AOvnAwjWiRIX--/view?usp=sharing
+├── requirements.txt
+└── README.md
