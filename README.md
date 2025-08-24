@@ -11,7 +11,6 @@ An integrated **Machine Learning** and **Deep Learning** based web application t
 Built using **Scikit-learn**, **TensorFlow/Keras**, and **Streamlit**, this system provides a **one-stop solution** for early disease detection through both **clinical parameters** and **medical imaging**.
 
 ---
-# 🧠 Multiple Disease Prediction System  
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white)  
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white)  
