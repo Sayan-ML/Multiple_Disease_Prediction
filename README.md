@@ -80,7 +80,14 @@ With real-time predictions, clear result visualization, and multi-disease suppor
 - **Input:** Retinal Fundus Image  
 - **Model:** Deep CNN  
 - **Dataset:** APTOS 2019 / EyePACS (Kaggle)  
-- **Goal:** Detect retinal damage due to prolonged diabetes.  
+- **Goal:** Detect retinal damage due to prolonged diabetes.
+
+### Medical Image Segmentation:**  
+- **Brain Tumor Segmentation** using a **UNet architecture**, trained on MRI datasets  
+- Achieved **92% Dice Score** for precise tumor boundary detection  
+
+The system is built using **Streamlit** for interactive deployment and can be scaled with cloud/Docker for production environments.  
+
 
 ---
 
