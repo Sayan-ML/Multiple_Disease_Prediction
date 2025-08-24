@@ -35,7 +35,6 @@ With real-time predictions, clear result visualization, and multi-disease suppor
 ---
 
 ## 🚀 Live Demo  
-👉 [Launch the App](#) *(Replace with actual Streamlit/hosted link)*  
 
 📽️ [App Walkthrough Demo](https://drive.google.com/file/d/1AdHwqrB8fRaRpxSjY3AOvnAwjWiRIX--/view?usp=sharing)  
 
