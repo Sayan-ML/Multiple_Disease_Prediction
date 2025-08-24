@@ -82,7 +82,7 @@ With real-time predictions, clear result visualization, and multi-disease suppor
 - **Dataset:** APTOS 2019 / EyePACS (Kaggle)  
 - **Goal:** Detect retinal damage due to prolonged diabetes.
 
-### Medical Image Segmentation:**  
+### Medical Image Segmentation:
 - **Brain Tumor Segmentation** using a **UNet architecture**, trained on MRI datasets  
 - Achieved **92% Dice Score** for precise tumor boundary detection  
 
